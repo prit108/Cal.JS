@@ -13,8 +13,11 @@ for(var i = 0 ; i < num.length ; i++)
         /** if currently there is no result displayed then,
             add the pressed number to the display div
           * if the result has been displayed then,
+            see if the last entered character is a symbol then continue to ask for a number
             clear the display and then add the number to the div         
         */
+       var currentString = display.innerHTML;
+       var lastChar = currentString[currentString.length - 1];
        if(resultDisplayed == false)
        {
            display.innerHTML += e.target.innerHTML;
@@ -48,7 +51,7 @@ for(var i = 0 ; i < operator.length ; i++ )
         var currentString = display.innerHTML;
         var lastChar = currentString[currentString.length - 1];
         
-        if(lastChar === "+" || lastChar == "-" || lastChar == "×" || lastChar == "÷")
+        if(lastChar == "+" || lastChar == "-" || lastChar == "×" || lastChar == "÷")
         {
             var newString = currentString.substring(0,currentString.length - 1) + e.target.innerHTML;
             display.innerHTML = newString;
