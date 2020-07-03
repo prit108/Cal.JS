@@ -19,6 +19,11 @@ for(var i = 0 ; i < num.length ; i++)
        {
            display.innerHTML += e.target.innerHTML;
        }
+       else if(lastChar == "+" || lastChar == "-" || lastChar == "×" || lastChar == "÷")
+       {
+           resultDisplayed = false;
+           display.innerHTML += e.target.innerHTML;
+       }
        else
        {
            resultDisplayed = false;
